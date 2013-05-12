@@ -10,9 +10,9 @@
         n.ss = a.pad(n.s, 2), n.z = e.getMilliseconds(), n.zz = n.z + "z", n.zzz = a.pad(n.z, 3), 
         n.ap = 12 > n.H ? "am" : "pm", n.a = 12 > n.H ? "am" : "pm", n.AP = 12 > n.H ? "AM" : "PM", 
         n.A = 12 > n.H ? "AM" : "PM";
-        for (var s = 0, o = "", u = ""; t.length > s; ) {
-            for (u = t.charAt(s); t.length > s + 1 && void 0 !== n[u + t.charAt(s + 1)]; ) u += t.charAt(++s);
-            o += void 0 !== n[u] ? n[u] : u, s++;
+        for (var s = 0, o = "", i = ""; t.length > s; ) {
+            for (i = t.charAt(s); t.length > s + 1 && void 0 !== n[i + t.charAt(s + 1)]; ) i += t.charAt(++s);
+            o += void 0 !== n[i] ? n[i] : i, s++;
         }
         return o;
     }, Date.formatLogic = {
@@ -42,13 +42,13 @@
         r.m = "([0-9][0-9]?)", r.mm = "([0-9][0-9])", r.s = "([0-9][0-9]?)", r.ss = "([0-9][0-9])", 
         r.z = "([0-9][0-9]?[0-9]?)", r.zz = "([0-9][0-9]?[0-9]?)[z]", r.zzz = "([0-9][0-9][0-9])", 
         r.ap = "([ap][m])", r.a = "([ap][m])", r.AP = "([AP][M])", r.A = "([AP][M])";
-        for (var n = Date.parseLogic, s = 0, o = "", u = Array(""), i = ""; t.length > s; ) {
-            for (i = t.charAt(s); t.length > s + 1 && void 0 !== r[i + t.charAt(s + 1)]; ) i += t.charAt(++s);
-            void 0 !== r[i] ? (o += r[i], u[u.length] = i) : o += i, s++;
+        for (var n = Date.parseLogic, s = 0, o = "", i = Array(""), u = ""; t.length > s; ) {
+            for (u = t.charAt(s); t.length > s + 1 && void 0 !== r[u + t.charAt(s + 1)]; ) u += t.charAt(++s);
+            void 0 !== r[u] ? (o += r[u], i[i.length] = u) : o += u, s++;
         }
         var y = RegExp(o), c = e.match(y);
-        if (void 0 === c || c.length !== u.length) return void 0;
-        for (s = 0; u.length > s; s++) if ("" !== u[s]) switch (u[s]) {
+        if (void 0 === c || c.length !== i.length) return void 0;
+        for (s = 0; i.length > s; s++) if ("" !== i[s]) switch (i[s]) {
           case "yyyy":
           case "yyy":
             a.setYear(n.parseInt(c[s]));
@@ -111,14 +111,17 @@
         return this.setTime(Date.parseFormat(e, t).getTime()), this;
     };
 })(), String.prototype.toSize = function(e) {
-    var t, a, r, n, s, o, u;
+    var t, a, r, n, s, o, i;
     for (null == e && (e = 0), s = [ "bytes", "KB", "MB", "GB", "TB" ], r = parseInt(this, 10) || 0, 
-    t = o = 0, u = s.length; u > o; t = ++o) if (a = s[t], n = r / Math.pow(1024, t), 
+    t = o = 0, i = s.length; i > o; t = ++o) if (a = s[t], n = r / Math.pow(1024, t), 
     1024 > n) return 0 === t ? 0 === r ? "0KB" : "> 1KB" : n.toFixed(e) + s[t];
     return (r / Math.pow(1024, s.length - 1)).toFixed(e) + s[s.length - 1];
 };
 
-var Q;
+var Q, __indexOf = [].indexOf || function(e) {
+    for (var t = 0, a = this.length; a > t; t++) if (t in this && this[t] === e) return t;
+    return -1;
+};
 
 Q = [ "第一次看限制級影片在哪？幾歲？", "Party中你最喜歡哪一位異性？", "你今天的內衣內褲顏色是？", "有沒有愛過不該愛的人（重口味）？", "交往過幾個男/女朋友？", "曾經在哪裡有過最刺激的性經驗？", "有幾次性經驗（不同對象）幾次？", "有過一夜情嗎？最值得回憶的是？", "有無使用成人玩具幫助自慰的經驗？", "性幻想的對象是（明星/Party）？", "你收過最爛的禮物（重口味）？", "對父母/朋友說過最誇張的謊言是？", "你喜歡BL/GL嗎？", "你身上哪個部位最敏感？", "你的兩個好朋友偷偷去看電影沒邀你，你會？", "你有劈腿/被劈腿的經驗嗎？", "如果你有魔法棒，你想變出什麼？", "有沒有最爛的約會經驗？", "如果你可以變成任何動物，你想變成？", "你覺得自己最性感的地方是？", "假設現在你有免死金牌，你想做什麼事？", "如果看到喜歡的對象在你面前睡著，你會？", "曾經發生過最感動的事是？", "你心目中理想的愛人是？", "世界末日將近你只可以救一個人，你想救誰？", "你聽過最瞎的分手理由是？", "對你而言愛情/友情/親情哪一個最重要？", "如果你的知己和你的另一伴交往，你會？", "你做過最瘋狂的事是（重口味）？", "老實說！有沒有偷偷喜歡Andy？", "初吻的年齡是？感覺如何？", "有沒有與同性親密接觸過？", "與愛人約會，遇到前任男/女朋友你會？", "你最經典的搭訕/被搭訕的經驗是？", "有沒有曾經忘記穿內衣褲就出門？", "你願意幫心愛的人洗內衣褲嗎？", "在家會裸體嗎？還是都怎麼穿？", "你曾經幻想自己是哪部電影的角色嗎？", "你是制服控嗎？喜歡哪種制服？", "有跟好友的男/女朋友發生不該發生的事情嗎？", "有跟另一伴的好友發生不該發生的事情嗎？", "有跟『那些年』一樣集體自慰的經驗嗎？", "給你一個機會，你最想摸Andy的哪裡？", "你最想KISS派對中的哪一位異性？", "有偷看過爸媽在性行為嗎？", "請說出你的SIZE（女生上圍，男生勃起）？", "是否曾經在外套下做過什麼壞事？", "有幻想過跟Andy發生一夜情嗎？", "有沒有沒戴保險套的經驗？喜歡戴還不戴？", "知道什麼是指套嗎？有用過嗎？", "有沒有去紅燈區消費過？", "喝酒後，發生過最糗的事情是？", "做過最浪漫的事情是？", "最想把誰丟下泳池（不能說Andy）？", "夢想中的婚禮內容是？", "有沒有當過第三者的經驗？", "分享一下告白/被告白的經驗？", "你現在的身高體重是？", "最喜歡的性行為姿勢是？", "理想伴侶的三個條件是？", "是否有跑錯廁所的經驗（男跑女，女跑男）？", "有沒有偷偷尿過床？" ], 
 Q.sort(function() {
@@ -126,10 +129,10 @@ Q.sort(function() {
 }), $(function() {
     var e, t, a, r, n, s, o;
     return o = $(window), e = $("body"), n = $("todo"), a = $("#keyin"), r = $("#report td"), 
-    t = $("#inbar"), e.on("touchstart", function() {
-        var t, n;
-        return $(e).hasClass("report") ? ($(".num", a).text("?"), $(e).removeClass("report")) : (n = Math.floor(9 * Math.random()) + 1, 
-        t = Q.slice(n, n + 1)[0], Q.splice(n, 1), $(r).text(t), t || $(r).text("ERROR"), 
+    t = $("#inbar"), e.on("touchstart", function(t) {
+        var n, s;
+        return t.preventDefault(), $(e).hasClass("report") ? ($(".num", a).text("?"), $(e).removeClass("report")) : (s = Math.floor(9 * Math.random()) + 1, 
+        n = Q.slice(s, s + 1)[0], Q.splice(s, 1), $(r).text(n), n || $(r).text("ERROR"), 
         $(e).addClass("report"));
     }), t.on("keydown", function(t) {
         var a, n;
@@ -139,7 +142,7 @@ Q.sort(function() {
     }), t.on("keyup", function() {
         return $(".num", a).text($(this).val());
     }), s = function() {
-        return t.focus(), setTimeout(function() {
+        return 0 > __indexOf.call(window, "ontouchstart") && t.focus(), setTimeout(function() {
             return s();
         }, 1500);
     }, s();

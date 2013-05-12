@@ -75,6 +75,7 @@ $ ->
   inbar = $('#inbar')
 
   body.on 'touchstart', (e) ->
+    e.preventDefault()
     if $(body).hasClass 'report'
       $('.num',keyin).text '?'
       $(body).removeClass 'report'
@@ -105,7 +106,7 @@ $ ->
 
   update = () ->
 
-      inbar.focus()
+      inbar.focus() unless 'ontouchstart' in window
 
       setTimeout (-> update()), 1500
 
