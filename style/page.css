@@ -398,7 +398,7 @@ ul, li {
     height: 240px;
     margin-left: -120px;
     margin-top: -120px;
-    font-size: 240px;
+    font-size: 210px;
   }
   /* line 108, ../dev/sass/page.sass */
   #keyin .wrap {
@@ -412,7 +412,7 @@ ul, li {
 
   /* line 115, ../dev/sass/page.sass */
   #report {
-    width: 90%;
+    width: 80%;
     height: 320px;
     left: 10%;
     margin-left: 0px;
