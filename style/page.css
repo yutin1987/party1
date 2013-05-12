@@ -415,6 +415,7 @@ ul, li {
     width: 90%;
     height: 320px;
     left: 10%;
+    margin-left: 0px;
     margin-top: -180px;
     font-size: 32px;
   }
