@@ -60,7 +60,7 @@ ul, li
     width: 400px
     height: 400px
     margin-left: -200px
-    margin-top: -200px
+    margin-top: -210px
     text-align: center
     font-size: 400px
     color: #FFF
@@ -69,7 +69,7 @@ ul, li
     left: 0px
     top: 0px
     margin-left: -280px
-    margin-top: -280px
+    margin-top: -300px
     width: 500px
     height: 500px
     background-color: rgba(0, 0, 0, 0)
@@ -79,6 +79,24 @@ ul, li
     +single-box-shadow(#2187e7, 0, 0, 35px)
     +experimental(animation, keyin 3s infinite linear)
 
+#report
+  position: absolute
+  left: 50%
+  top: 50%
+  width: 900px
+  height: 500px
+  margin-left: -450px
+  margin-top: -250px
+  font-size: 120px
+  text-align: center
+  opacity: 0
+  color: #FFF
+  +transition(opacity 0.5s ease-in-out 0s)
+  .report &
+    opacity: 1
+    +transition(opacity 0.5s ease-in-out 1s)
+
+
 @media (max-width: 480px)
   #keyin
     .num
@@ -86,21 +104,17 @@ ul, li
       height: 240px
       margin-left: -120px
       margin-top: -120px
-      font-size: 120px
+      font-size: 240px
     .wrap
-      margin-left: -160px
-      margin-top: -160px
-      width: 300px
-      height: 300px
+      margin-left: -140px
+      margin-top: -140px
+      width: 260px
+      height: 260px
       border: 10px solid rgba(0, 0, 0, 0)
-      border-radius: 300px
-
+      border-radius: 260px
   #report
-    position: absolute
-    left: 50%
-    top: 50%
-    width: 900px
-    height: 500px
-    margin-left: -450px
-    margin-top: -250px
-    font-size: 120px
+    width: 90%
+    height: 320px
+    left: 10%
+    margin-top: -180px
+    font-size: 32px
