@@ -1,0 +1,97 @@
+@import "compass"
+@import "../sass_lib/animation.sass"
+
++keyframes('running')
+  0%
+    +scale(1)
+  100%
+    +scale(5)
+
++keyframes('stoppe')
+  0%
+    border-color: #ff0000 rgba(0, 0, 0, 0)
+  50%
+    border-color: rgba(0, 0, 0, 0) #ff0000
+  100%
+    border-color: #ff0000 rgba(0, 0, 0, 0)
+
++keyframes('paused')
+  0%
+    border-color: rgba(0, 0, 0, 0) #ff9900
+  50%
+    border-color: rgba(0, 0, 0, 0)
+  100%
+    border-color: rgba(0, 0, 0, 0) #ff9900
+
++keyframes('keyin')
+  0%
+    border-color: #2187e7 rgba(0, 0, 0, 0)
+  50%
+    border-color: rgba(0, 0, 0, 0) #2187e7
+  100%
+    border-color: #2187e7 rgba(0, 0, 0, 0)
+
+body
+  background-image: inline-image('bg.png')
+  background-attachment: fixed
+
+ul, li
+  padding: 0
+  margin: 0
+
+#inbar
+  background: none
+  border: none
+  opacity: 0
+  
+#keyin
+  position: absolute
+  left: 50%
+  top: 50%
+  +transition(opacity 0.5s ease-in-out 0s)
+  .report &
+    opacity: 0
+    +experimental(animation, running 1s infinite linear)
+    +transition(opacity 0.5s ease-in-out 1s)
+  .num
+    position: absolute
+    left: 0px
+    top: 0px
+    width: 400px
+    height: 400px
+    margin-left: -200px
+    margin-top: -210px
+    text-align: center
+    font-size: 400px
+    color: #FFF
+  .wrap
+    position: absolute
+    left: 0px
+    top: 0px
+    margin-left: -280px
+    margin-top: -300px
+    width: 500px
+    height: 500px
+    background-color: rgba(0, 0, 0, 0)
+    border: 30px solid rgba(0, 0, 0, 0)
+    opacity: 0.9
+    border-radius: 600px
+    +single-box-shadow(#2187e7, 0, 0, 35px)
+    +experimental(animation, keyin 3s infinite linear)
+
+#report
+  position: absolute
+  left: 50%
+  top: 50%
+  width: 880px
+  height: 500px
+  margin-left: -440px
+  margin-top: -250px
+  font-size: 250px
+  text-align: center
+  opacity: 0
+  color: #FFF
+  +transition(opacity 0.5s ease-in-out 0s)
+  .report &
+    opacity: 1
+    +transition(opacity 0.5s ease-in-out 1s)
