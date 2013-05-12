@@ -80,7 +80,7 @@ $ ->
       $('.num',keyin).text '?'
       $(body).removeClass 'report'
     else
-      num = Math.floor(Math.random() * 9) + 1
+      num = Math.floor(Math.random() * Q.length)
       dost = Q.slice(num,num+1)[0]
       Q.splice(num,1)
       $(report).text(dost)
@@ -92,6 +92,7 @@ $ ->
       $(body).toggleClass 'report'
       num = parseInt($(@).val(),10)
       if num > 0 and num < 10
+        num = Math.floor(Math.random() * Q.length)
         dost = Q.slice(num,num+1)[0]
         Q.splice(num,1)
         $(report).text(dost)
